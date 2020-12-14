@@ -5,22 +5,13 @@ import EcoIcon from "@material-ui/icons/Eco";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-//import Bookmark from "../../droppedFiles/Bookmark";
-
-import { useState } from "react";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 
 const Recipe = ({ recipe }) => {
-  const [checked, setChecked] = useState(false);
-  const [isSelected, setIsSelected] = useState();
   const router = useRouter();
   if (router.isFallback) return <Spinner />;
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setChecked((checked) => !checked);
-  };
   return (
     <>
       <div id="recipe-content">
@@ -29,7 +20,11 @@ const Recipe = ({ recipe }) => {
             id="recipe-image"
             src={recipe.image_url}
             alt={recipe.title.replace("amp;", "")}
-            onError={(i) => (i.target.src = "noimg.png")}
+            // onError={(e) => (e.target.src = "noimg.png")}
+            onError={(e) => {
+              onerror = null;
+              (e.target as HTMLImageElement).src = "noimg.png";
+            }}
           ></img>
           <h2 id="recipe-title">{recipe.title.replace("amp;", "")}</h2>
         </figure>
@@ -70,7 +65,7 @@ const Recipe = ({ recipe }) => {
             <Button
               variant="contained"
               color="primary"
-              onClick={(event: MouseEvent<HTMLButtonElement>) => {
+              onClick={(event) => {
                 event.preventDefault();
                 window.open(recipe.source_url, "_blank");
               }}

@@ -1,14 +1,12 @@
 import Searchbar from "../../components/Searchbar";
 import SearchPagination from "../../components/SearchPagination";
-import RecipeToDisplay from "../../components/RecipeToDisplay";
+
 import Spinner from "../../components/Spinner";
 import SearchResults from "../../components/SearchResults";
 
 import { GetStaticProps } from "next";
 
-import { useEffect, useState } from "react";
-
-import { IRecipe } from "../../utils/appReducer";
+import { useState } from "react";
 
 interface IRecipes {
   image_url: string;
