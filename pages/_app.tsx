@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 import Layout from "../components/Layout";
-import ErrorBoundary from "../components/ErrorBoundary";
+//import ErrorBoundary from "../components/ErrorBoundary";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 //import { FavsProvider } from "../utils/favsContext";
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <ErrorBoundary>
+   {/*  <ErrorBoundary> */}
       <ThemeProvider theme={theme}>
         {/* <FavsProvider> */}
         <Layout>
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
         </Layout>
         {/* </FavsProvider> */}
       </ThemeProvider>
-    </ErrorBoundary>
+   {/*  </ErrorBoundary> */}
   );
 }
 
