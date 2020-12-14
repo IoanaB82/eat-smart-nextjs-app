@@ -6,47 +6,11 @@ import "@testing-library/jest-dom/extend-expect";
 
 afterEach(cleanup);
 
-function renderHome(args) {
-  let defaultProps = {
-    location: "",
-    errors: {},
-  };
-
-  const props = { ...defaultProps, ...args };
-
-  return render(<Home {...props} />);
-}
-
-// describe("index page", () => {
-//   test("renders title correct", () => {
-//     const { getByText } = render(<Home />);
-//     getByText("Welcome");
-//   });
-// });
-
 it("renders an h1 with content Welcome", () => {
-  const { getByTestId } = renderHome();
+  const { getByTestId } = render(<Home />);
 
   expect(getByTestId("home-h1")).toHaveTextContent("Welcome!");
 });
-
-// function renderRecipes(args) {
-//   let defaultProps = {
-//     location: "",
-//     errors: {},
-//   };
-
-//   const props = { ...defaultProps, ...args };
-
-//   return render(<Recipes {...props} />);
-// }
-
-// describe("index page", () => {
-//   test("renders title correct", () => {
-//     const { getByText } = render(<Home />);
-//     getByText("Welcome");
-//   });
-// });
 
 it("renders", () => {
   const props = {
