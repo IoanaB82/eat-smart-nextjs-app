@@ -184,7 +184,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // Call an external API endpoint to get posts
 
   // Get the paths we want to pre-render based on posts
-  const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
+  const paths = [
+    { params: { id: "5ed6604591c37cdc054bc862" } },
+    { params: { id: "5ed6604591c37cdc054bc877" } },
+  ];
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
