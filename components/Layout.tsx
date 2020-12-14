@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Header from "./Header";
 import Searchbar from "./Searchbar";
 import Container from "@material-ui/core/Container";
@@ -11,7 +11,6 @@ const Layout = (props) => {
     display: "flex",
     flexDirection: "column",
 
-    borderRadius: "0 0 15px 15px",
     padding: "2rem",
 
     background: "#fff",
@@ -23,6 +22,7 @@ const Layout = (props) => {
         <Header />
 
         <main style={contentStyle}>{props.children}</main>
+        <Footer />
       </Container>
     </>
   );
