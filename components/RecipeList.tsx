@@ -9,7 +9,10 @@ const RecipeList = (props) => {
             <figure>
               <img
                 src={props.recipe.image_url}
-                onError={(i) => (i.target.src = "noimg.png")}
+                onError={(e) => {
+                  onerror = null;
+                  (e.target as HTMLImageElement).src = "noimg.png";
+                }}
                 data-testid="recipe-img"
               />
             </figure>
